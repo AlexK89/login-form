@@ -25,7 +25,7 @@ function submit_form($our_user, $our_user_pass, $post_user_name, $post_password)
     if (!(empty($post_user_name) || empty($post_password))) {
         return session_data($our_user, $our_user_pass, $post_user_name, $post_password);
     } else {
-        return "<p style='color:red;'>Please provide login and pass</p>";
+        return "<p style='color:red;' class='error'>Please provide login and pass</p>";
     }
 }
 
@@ -44,7 +44,7 @@ function session_data($our_user, $our_user_pass, $post_user_name, $post_password
         $_SESSION['password'] = $post_password;
         return 1;
     } else {
-        return "<p style='color:red;'>Wrong pass or name</p>";
+        return "<p style='color:red;' class='error'>Wrong pass or name</p>";
     }
 }
 
